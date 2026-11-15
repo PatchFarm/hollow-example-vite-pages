@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/PatchFarm/the-hollow/main/schema/hollow.schema.json
+# The Hollow pipeline config. Change it, then run `npx the-hollow upgrade` to regenerate
+# the workflows. Anything not set here uses a safe default; the schema above lists them all.
+version: 1
+deploy:
+  target: cloudflare-pages
+  projectName: hollow-example-vite-pages
+environments:
+  staging:
+    url: https://staging.hollow-example-vite-pages.pages.dev
+  production:
+    url: https://hollow-example-vite-pages.pages.dev
+verify:
+  healthPath: /health.txt
